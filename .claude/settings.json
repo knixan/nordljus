@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/blockera-git.mjs\"",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/blockera-git.ts\"",
             "timeout": 10
           }
         ]
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/formatera-och-linta.mjs\"",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/formatera-och-linta.ts\"",
             "timeout": 60
           }
         ]
