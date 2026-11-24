@@ -70,6 +70,8 @@ flowchart LR
 - **Adapter per team:** Ett nytt team skriver en egen adapter och behöver inte röra kärnan.
 - **Återanvändbar kartkomponent:** Kartan och `useSituation()` ligger i ett eget paket som flera team kan använda.
 
+Flödet steg för steg, tidsbudgeten och kraven på det isolerade nätet beskrivs i [docs/architecture.md](docs/architecture.md).
+
 ## Planerad struktur
 
 ```

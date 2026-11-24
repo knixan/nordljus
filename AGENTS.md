@@ -39,8 +39,13 @@ src/
     Nordljus.Adapter.Havsorn/  råformat → TrackUpdate
 tests/                         ett xUnit-projekt per src-projekt (Nordljus.Core.Tests …)
 frontend/
+  src/situation-map/           delas mellan teamen – får inte importera från app/
+    components/                kartan, markörer, statusmärken
+    hooks/                     useSituation() m.fl.
+    index.ts                   publikt API – andra importerar bara härifrån
   src/app/                     appen för Nordljus (och en vy för Havsörn)
-  src/situation-map/           återanvändbar karta + useSituation() – delas mellan teamen
+    pages/                     en fil per vy – sätter ihop komponenter
+    components/                komponenter som bara appen använder
 docs/                          problem, discovery, arkitektur, adr/, dependencies.md, workshop/
 docker-compose.yml
 ```
@@ -58,7 +63,7 @@ Mappar som inte finns än skapas när första filen behövs, enligt strukturen o
 - **Minimal API**, inga controllers. Endpoints grupperas per område i egna filer (`SituationEndpoints.cs`).
 - **Tider i UTC** (`DateTimeOffset`). Lokal tid först när den visas i UI:t.
 - **C#:** nullable på, `TreatWarningsAsErrors`, file-scoped namespaces, primary constructors där det blir tydligare. Inga `static` hjälpklasser med tillstånd.
-- **Frontend:** TypeScript `strict`, ingen `any`. Funktionskomponenter och hooks. Komponenter i kebab-case (`track-marker.tsx` → `TrackMarker`). Det som ska delas med Havsörn ligger i `src/situation-map/` och får inte importera från `src/app/`.
+- **Frontend:** TypeScript `strict`, ingen `any`. Funktionskomponenter och hooks. Komponenter i kebab-case (`track-marker.tsx` → `TrackMarker`). Det som ska delas med Havsörn ligger i `src/situation-map/`, exporteras från dess `index.ts` och får inte importera från `src/app/`. Sidor ligger i `pages/` och sätter ihop komponenter; komponenter ligger i `components/` och vet inte vilken sida de används på. Testet ligger bredvid filen (`track-marker.test.tsx`). Se `docs/architecture.md` § Frontend.
 - **Håll det enkelt.** Ingen abstraktion "för framtiden" utöver adapter-mönstret, som är själva poängen.
 
 ### UI
