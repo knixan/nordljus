@@ -46,7 +46,7 @@ Tiderna 5 och 30 sekunder är startvärden som går att ändra i konfigurationen
 
 ## Antaganden att pröva
 
-De här antagandena prövas i samtal med operatörer och utvecklare (`discovery.md`):
+De här antagandena prövas i samtal med operatörer och utvecklare ([discovery.md](discovery.md)):
 
 - Sensorerna rapporterar ungefär en gång per sekund.
 - Nätet är isolerat och allt körs lokalt.
