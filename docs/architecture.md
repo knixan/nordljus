@@ -105,7 +105,7 @@ Sidor och komponenter ligger var för sig, och var en komponent ligger säger om
 ```
 frontend/src/
   situation-map/              delas med andra team – får inte importera från app/
-    components/               situation-map.tsx, track-marker.tsx, status-badge.tsx
+    components/               status-badge.tsx + status-badge.module.css, situation-map.tsx …
     hooks/                    use-situation.ts (SignalR-anslutning och tillstånd)
     types.ts                  speglar kontraktet TrackUpdate
     index.ts                  publikt API – andra importerar bara härifrån
@@ -113,7 +113,8 @@ frontend/src/
     pages/                    en fil per vy: situation-page.tsx, havsorn-page.tsx
     components/               används bara av appen: app-header.tsx, theme-toggle.tsx
     app.tsx                   väljer vilken sida som visas
-  theme.css                   färger som CSS-variabler
+  theme.css                   tokens som CSS-variabler: färger, avstånd, typsnitt
+  fonts/                      typsnittsfiler (.woff2) och deras licens
 ```
 
 - **En sida** sätter ihop komponenter och bestämmer layouten. Den har så lite logik som möjligt.
@@ -123,6 +124,16 @@ frontend/src/
 - Ingen router från början. Två vyer går att välja med ett enkelt tillstånd i `app.tsx`. Behövs fler sidor senare tas det upp som ett paket enligt `add-dependency`.
 
 Frontend ser bara kontraktet, aldrig teamens råformat.
+
+### Styling
+
+Vanlig CSS, inget ramverk. Allt som behövs finns redan i Vite.
+
+- **`theme.css`** håller alla tokens som CSS-variabler (`--color-…`, avstånd, typsnitt). Mörkt läge ligger på `:root` och ljust läge på `[data-theme="light"]`. Komponenter använder bara variablerna, aldrig hexkoder.
+- **CSS Modules** för komponenter: `status-badge.module.css` ligger bredvid `status-badge.tsx`. Klassnamnen blir unika vid bygget, så att `situation-map/` kan bäddas in i Havsörns app utan att krocka med deras CSS. Vite stöder det utan något extra paket.
+- **Typsnitt** ligger som `.woff2` i `src/fonts/` och laddas med `@font-face`. Licensen ligger bredvid filerna, och typsnittet har en rad i `docs/dependencies.md`.
+- **Kartsymboler** ritas som lager i MapLibre (WebGL), inte som HTML-element, för att 5 000 objekt ska gå att visa. Där gäller inte CSS, så kartkoden läser färgerna från temat med `getComputedStyle(document.documentElement).getPropertyValue('--color-…')` och läser om dem när temat byts. Paneler, larm, legend och händelselogg är vanlig CSS.
+- **Varför inte Tailwind eller ett komponentbibliotek?** Det blir fler paket för säkerhetsavdelningen att godkänna och ett extra byggsteg, och det tillför inget som CSS-variabler och CSS Modules inte redan klarar.
 
 ## Öppna frågor
 
