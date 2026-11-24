@@ -12,6 +12,8 @@ All data är fiktiv.
 
 Operatörerna i team Nordljus ser i dag sensordata i en gammal skrivbordsapplikation som läser in en CSV-fil var 30:e sekund. Bilden ligger alltid efter, och leveranser görs genom att någon kopierar filer till en server för hand.
 
+Hela problemformuleringen, med användare och mätbara kriterier, finns i [docs/problem.md](docs/problem.md).
+
 ## Krav
 
 | Krav | Vad det betyder |
