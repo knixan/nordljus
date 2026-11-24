@@ -1,0 +1,48 @@
+/*
+ * Temat: alla färger som CSS-variabler. Komponenter använder bara variablerna, aldrig hexkoder.
+ * Mörkt läge är standard. Den tunna skivan har bara de variabler den behöver; resten och
+ * ljust läge kommer med kortet "[V2] Färgtema: mörkt militärt tema".
+ *
+ * Kontrast (WCAG AA), uträknad 2026-11-24:
+ *   text-primary på map-terrain 8,7:1 · text-secondary på surface 6,8:1
+ *   status-warning på surface 6,5:1 · primary (markör) på map-terrain 3,5:1, med ring i text-primary 8,7:1
+ *   map-grid på map-terrain 2,4:1 – bara dekoration, bär ingen information.
+ */
+:root {
+  color-scheme: dark;
+
+  --color-background: #171c19;
+  --color-surface: #202822;
+  --color-border: #465344;
+  --color-primary: #829477;
+  --color-text-primary: #e0e3d8;
+  --color-text-secondary: #a8b09f;
+  --color-status-warning: #d6a04b;
+  --color-map-terrain: #343d32;
+  --color-map-grid: #697665;
+
+  /* Systemtypsnitt – inget hämtas från internet. */
+  --font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+}

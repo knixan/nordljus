@@ -1,12 +1,31 @@
 # Nordljus – lägesbild i realtid
 
-> **Status: under uppbyggnad.** Det här dokumentet beskriver vad som planeras. Instruktioner för att köra projektet kommer när den första versionen fungerar.
+> **Status: under uppbyggnad.** En första tunn version fungerar: en simulerad enhet rör sig på lägesbilden, hela vägen från sensor till webbläsare (se [Kör lokalt](#kör-lokalt)). Resten av dokumentet beskriver vad som planeras.
 
 Nordljus är en webbaserad lägesbild för ett påhittat militärt team. Sensorer rapporterar position och status för personal, markfordon och helikoptrar, och operatörer följer dem live på en karta. Systemet är byggt för ett **isolerat nät** utan internet.
 
 Projektet är ett portfolio-case för rollen **Forward Deployed Engineer**. Uppdraget är att sitta med ett produktteam i sex veckor, lösa deras problem och samtidigt bygga något som fler team kan återanvända.
 
 All data är fiktiv.
+
+## Kör lokalt
+
+Kräver [.NET SDK 10](https://dotnet.microsoft.com/download) och Node 24. `docker compose up` kommer i vecka 3; till dess körs delarna i tre terminaler från repots rot:
+
+```bash
+dotnet run --project src/Nordljus.Backend      # http://localhost:5076, tar emot UDP på port 5300
+dotnet run --project src/Nordljus.Simulator    # skickar Järn 1:s position en gång per sekund
+cd frontend && npm ci && npm run dev           # öppna http://localhost:5173
+```
+
+En prick märkt "Järn 1 · 1 s sedan" ska röra sig i en cirkel. Stoppa simulatorn: pricken står still och åldern räknas upp. Stoppa backend: sidhuvudet visar att kontakten med servern är borta.
+
+| Variabel            | Standard    | Används av | Vad                              |
+| ------------------- | ----------- | ---------- | -------------------------------- |
+| `NORDLJUS_UDP_HOST` | `127.0.0.1` | simulatorn | Vart sensordata skickas          |
+| `NORDLJUS_UDP_PORT` | `5300`      | simulatorn | UDP-porten som backend lyssnar på |
+
+Alla variabler står också i [.env.example](.env.example). Backendens port ställs in med `Ingest:Udp:Port` i `appsettings.json` (eller miljövariabeln `Ingest__Udp__Port`). `Validation:MaxClockSkew` (standard 5 s) anger hur långt fram i tiden en sensors klocka får gå innan positionen avvisas.
 
 ## Problemet
 

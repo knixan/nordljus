@@ -6,4 +6,13 @@
     <ProjectReference Include="..\Nordljus.Core\Nordljus.Core.csproj" />
   </ItemGroup>
 
+  <!--
+    TILLFÄLLIGT (tunna skivan, #5): backend refererar direkt till Nordljus-adaptern. Hur backend
+    hittar adapters utan att referera till dem är öppen fråga 1 i docs/architecture.md och avgörs
+    med en ADR i V4. Råformatet tolkas ändå bara i adaptern, så då byts bara den här referensen.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Adapters\Nordljus.Adapter.Nordljus\Nordljus.Adapter.Nordljus.csproj" />
+  </ItemGroup>
+
 </Project>

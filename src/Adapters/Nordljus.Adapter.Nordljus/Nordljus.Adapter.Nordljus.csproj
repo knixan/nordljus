@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Översätter team Nordljus råformat (JSON) till kontraktet. Känner bara till kontraktet. -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\Nordljus.Contracts\Nordljus.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

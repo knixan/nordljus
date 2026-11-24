@@ -5,7 +5,12 @@
     <Project Path="src/Nordljus.Core/Nordljus.Core.csproj" />
     <Project Path="src/Nordljus.Simulator/Nordljus.Simulator.csproj" />
   </Folder>
+  <Folder Name="/src/Adapters/">
+    <Project Path="src/Adapters/Nordljus.Adapter.Nordljus/Nordljus.Adapter.Nordljus.csproj" />
+  </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/Nordljus.Adapter.Nordljus.Tests/Nordljus.Adapter.Nordljus.Tests.csproj" />
+    <Project Path="tests/Nordljus.Core.Tests/Nordljus.Core.Tests.csproj" />
     <Project Path="tests/Nordljus.Simulator.Tests/Nordljus.Simulator.Tests.csproj" />
   </Folder>
 </Solution>

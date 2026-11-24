@@ -1,0 +1,48 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--color-background);
+}
+
+.terrain {
+  fill: var(--color-map-terrain);
+}
+
+.grid {
+  stroke: var(--color-map-grid);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.marker {
+  fill: var(--color-primary);
+  stroke: var(--color-text-primary);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.label {
+  fill: var(--color-text-primary);
+  font-family: var(--font-family);
+  /* Mörk kant runt texten, så att den går att läsa även ovanpå rutnätet.
+     Storlek och kantbredd sätts i komponenten (fast antal pixlar). */
+  stroke: var(--color-background);
+  paint-order: stroke;
+}
+
+.empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}

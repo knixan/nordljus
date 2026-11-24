@@ -137,6 +137,6 @@ Vanlig CSS, inget ramverk. Allt som behövs finns redan i Vite.
 
 ## Öppna frågor
 
-1. **Hur hittar backend en adapter utan att referera till den?** Antingen laddas adaptern från en mapp enligt konfigurationen, eller så finns ett tunt startprojekt som refererar till backend och alla adapters. Avgörs i vecka 4 med en ADR.
+1. **Hur hittar backend en adapter utan att referera till den?** Antingen laddas adaptern från en mapp enligt konfigurationen, eller så finns ett tunt startprojekt som refererar till backend och alla adapters. Avgörs i vecka 4 med en ADR. Fram till dess refererar backend **tillfälligt** direkt till Nordljus-adaptern (tunna skivan, #5). Råformatet tolkas ändå bara i adaptern, så då byts bara referensen.
 2. **Ska hubben vänta på att händelseloggen har skrivits?** Att vänta ger säkrast spårbarhet. Att inte vänta ger lägst latens. Mäts i vecka 3, innan vi bestämmer oss.
 3. **Hur långt ska ett tick vara?** 250 ms är en startpunkt. Det prövas med 5 000 objekt i vecka 5.
