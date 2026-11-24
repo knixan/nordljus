@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!-- Refererar till kärnan och kontraktet, aldrig till en adapter. -->
+  <ItemGroup>
+    <ProjectReference Include="..\Nordljus.Contracts\Nordljus.Contracts.csproj" />
+    <ProjectReference Include="..\Nordljus.Core\Nordljus.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+<Project>
+  <!-- Gäller alla projekt i repot. Sätt inte om de här värdena i ett enskilt projekt. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Kodstilen i .editorconfig kontrolleras av bygget, inte bara av editorn. -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <!-- Krävs för att IDE0005 (onödig using) ska kontrolleras i bygget. XML-kommentarer krävs inte (CS1591). -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+</Project>

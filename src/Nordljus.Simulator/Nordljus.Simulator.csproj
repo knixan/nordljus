@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Fejkade sensorer. Skickar råformat och refererar därför inte till kontraktet. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="units.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

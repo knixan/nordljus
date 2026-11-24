@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Kontraktet: inga beroenden. Inställningarna kommer från Directory.Build.props. -->
+
+</Project>

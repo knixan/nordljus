@@ -99,20 +99,20 @@ Versionerna är nyare än det du lärt dig. Slå upp i dokumentationen innan du 
 - **Kolla versionen.** Stämmer dokumentationen inte med versionen i projektet – leta efter en versionerad sida eller säg till.
 - Versionerna fylls i när paketet installeras.
 
-| Bibliotek         | Version | Dokumentation                                                     |
-| ----------------- | ------- | ----------------------------------------------------------------- |
-| .NET / ASP.NET    | 10      | https://learn.microsoft.com/aspnet/core/                          |
-| SignalR           | 10      | https://learn.microsoft.com/aspnet/core/signalr/introduction      |
-| EF Core           | –       | https://learn.microsoft.com/ef/core/                              |
-| Serilog           | –       | https://github.com/serilog/serilog-aspnetcore                     |
-| xUnit             | –       | https://xunit.net/docs/getting-started/v3/getting-started         |
-| React             | –       | https://react.dev/llms.txt                                        |
-| Vite              | –       | https://vite.dev/llms.txt                                         |
-| Vitest            | –       | https://vitest.dev/llms.txt                                       |
-| MapLibre GL JS    | –       | https://maplibre.org/maplibre-gl-js/docs/                         |
-| PMTiles           | –       | https://docs.protomaps.com/                                       |
-| Docker Compose    | –       | https://docs.docker.com/compose/                                  |
-| GitHub Actions    | –       | https://docs.github.com/actions                                   |
+| Bibliotek      | Version  | Dokumentation                                                |
+| -------------- | -------- | ------------------------------------------------------------ |
+| .NET / ASP.NET | 10.0.201 | https://learn.microsoft.com/aspnet/core/                     |
+| SignalR        | 10       | https://learn.microsoft.com/aspnet/core/signalr/introduction |
+| EF Core        | –        | https://learn.microsoft.com/ef/core/                         |
+| Serilog        | –        | https://github.com/serilog/serilog-aspnetcore                |
+| xUnit v3       | 4.0.3    | https://xunit.net/docs/getting-started/v3/getting-started    |
+| React          | –        | https://react.dev/llms.txt                                   |
+| Vite           | –        | https://vite.dev/llms.txt                                    |
+| Vitest         | –        | https://vitest.dev/llms.txt                                  |
+| MapLibre GL JS | –        | https://maplibre.org/maplibre-gl-js/docs/                    |
+| PMTiles        | –        | https://docs.protomaps.com/                                  |
+| Docker Compose | –        | https://docs.docker.com/compose/                             |
+| GitHub Actions | –        | https://docs.github.com/actions                              |
 
 ## Kommandon
 

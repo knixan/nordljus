@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Nordljus.Backend/Nordljus.Backend.csproj" />
+    <Project Path="src/Nordljus.Contracts/Nordljus.Contracts.csproj" />
+    <Project Path="src/Nordljus.Core/Nordljus.Core.csproj" />
+    <Project Path="src/Nordljus.Simulator/Nordljus.Simulator.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Nordljus.Simulator.Tests/Nordljus.Simulator.Tests.csproj" />
+  </Folder>
+</Solution>
